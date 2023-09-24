@@ -193,7 +193,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 // Xuat xung PWM
 		switch (Mode) 
 		{
-			case 1:	
+			case 1:		// Mode 1: Tot do cao nhat, tang nhanh theo ham mu. Nhuoc diem la re trai, re phai dap ung cham
 			k1 = Duty_Cycle1*pow(1.1,-Duty_Cycle2)/pow(1.1,Scale);
 			k2 = Duty_Cycle1*pow(1.1,Duty_Cycle2)/pow(1.1,Scale);
 			HAL_GPIO_WritePin(GPIOA,GPIO_PIN_2,check_number_inv(k1));		// Banh phai
@@ -201,7 +201,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 			HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,check_number(k2));		// Banh trai
 			__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, fabs(k2));
 			break;
-			case 2:	
+			case 2:		// Mode 2: Di chuyen cham
 			Duty_Cycle2 = Duty_Cycle2*10000/Scale;
 			if ((Duty_Cycle1 == 0) && (Duty_Cycle2 == 0))
 			{
@@ -218,7 +218,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 			HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,check_number(k2));		// Banh trai
 			__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, fabs(k2));
 			break;
-			case 3:
+			case 3:		// Mode 3: Di chuyen on dinh. Re trai, re phai, tien lui dap ung nhanh. Nhuoc diem: Banh xe nhanh bi mon
 			var = 4000 - fabs(Duty_Cycle2)*800;
 			k1 = Duty_Cycle1*(6000 + var)/10000 - Duty_Cycle2*800;
 			k2 = Duty_Cycle1*(6000 + var)/10000 + Duty_Cycle2*800;
