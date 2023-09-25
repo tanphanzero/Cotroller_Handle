@@ -94,7 +94,7 @@ int check_number_inv(double n){
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
 
-// Channel 2 tren RC dieu khien tien lui
+// Channel 1 tren RC dieu khien tien lui
 	 if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
 	 {
 		   if (Is_First_Captured1 == 0) 
