@@ -1,7 +1,8 @@
 # Controller Handle
 
 **Part 1: Building vehicle hardware and connecting STM32F407 to Motor, H Bridge**
-![da1](https://github.com/tanphanzero/project2/assets/85573204/833cc78d-0281-4ba0-9676-fb88219e6a0a)
+
+![doan1](https://github.com/tanphanzero/Cotroller_Handle/assets/85573204/5f946395-3e9f-494e-b795-c4cd4ca1ff05)
 
 **Part 2: Using the MANUAL vehicle control handle**
 
